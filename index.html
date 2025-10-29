@@ -1,532 +1,978 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZIM Acrobats | Zimbabwe's Premier Acrobatic Performers</title>
+    <meta name="description" content="ZIM Acrobats — Zimbabwe's premier acrobatic performers. Book high-energy, culturally rich acrobatic shows for events worldwide." />
+    <link rel="canonical" href="https://example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ZIM Acrobats | Zimbabwe's Premier Acrobatic Performers" />
+    <meta property="og:description" content="Experience breathtaking African acrobatics. Book ZIM Acrobats for your event." />
+    <meta property="og:image" content="/home/just/Documents/zimacrobats/photo_2025-10-15_03-02-57 (4).jpg" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- PNG favicons (replace paths with your actual PNG files) -->
+    <link rel="icon" type="image/png" sizes="700x320" href="/home/just/Documents/zimacrobats/images/zim-logo-256.png" />
+    <link rel="icon" type="image/png" sizes="400x100" href="/home/just/Documents/zimacrobats/images/zim-logo-256.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/home/just/Documents/zimacrobats/images/zim-logo-256.png" />
 
-<title>Zim_Acrobats</title>
-<meta name="description" content="">
-<meta name="author" content="">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&display=swap');
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/owl.carousel.css">
+        :root {
+            --primary-color: #D4AF37; /* Luxe Gold */
+            --secondary-color: #E8491D; /* Accent Flame */
+            --accent-color: #00A86B;   /* Emerald */
 
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
+            --dark-color: #0f0f1a;
+            --light-color: #dddbdb;
 
-<!-- Google Font -->
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
+            /* Light theme base */
+            --page-bg: #FBFBFB; /* Porcelain */
+            --page-bg-2: #FBFBFB; /* Ivory blend */
 
+            --text-light: #1A1A1A;
+            --ink-soft: #3a3a3a;
+
+            --heading-color: #222;
+            --body-color: #2e2e2e;
+            --muted-color: #444;
+
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(17, 17, 26, 0.08);
+            --shadow: rgba(17, 17, 26, 0.15);
+
+            --header-bg: rgba(255,255,255,0.9);
+            --menu-bg: rgba(255,255,255,0.98);
+            --menu-link: #111;
+
+            --focus-outline: 2px solid #D4AF37;
+        }
+
+        /* Dark theme overrides */
+        html[data-theme="dark"] {
+            --page-bg: #0B0B10;
+            --page-bg-2: #0B0B10;
+
+            --text-light: #F2F2F3;
+            --ink-soft: #C9C9CF;
+
+            --heading-color: #F5F5F7;
+            --body-color: #E6E6E8;
+            --muted-color: #BEBEC4;
+
+            --glass-bg: rgba(15, 16, 22, 0.6);
+            --glass-border: rgba(255,255,255,0.08);
+            --shadow: rgba(0,0,0,0.6);
+
+            --header-bg: rgba(12,12,16,0.85);
+            --menu-bg: rgba(10,10,14,0.98);
+            --menu-link: #F2F2F3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(1600px circle at 12% 18%, rgba(212,175,55,0.06), transparent 40%),
+                radial-gradient(1300px circle at 88% 82%, rgba(0,168,107,0.05), transparent 42%),
+                linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-2) 100%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Soft glow background pulses */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(232, 73, 29, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 40% 20%, rgba(0, 168, 107, 0.06) 0%, transparent 45%);
+            animation: pulse 15s ease-in-out infinite;
+            pointer-events: none; z-index: 0; opacity: 0.9;
+        }
+        @keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:.9} }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus-visible {
+            left: 16px; top: 16px; width: auto; height: auto;
+            padding: 10px 14px; background: #000; color: #fff; border-radius: 8px;
+            z-index: 2000;
+        }
+
+        /* Focus styles */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: var(--focus-outline);
+            outline-offset: 3px;
+        }
+
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+
+        /* Typography upgrades for luxury vibe */
+        h1, h2, h3, .logo, .footer-logo { font-family: 'Playfair Display', serif; letter-spacing: 0.2px; }
+
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1000; transition: all .3s ease;
+            background: transparent;
+        }
+        header.scrolled {
+            background: var(--header-bg);
+            backdrop-filter: blur(0.5px);
+            box-shadow: 0 5px 20px rgba(17,17,26,.12);
+        }
+        nav {
+            display: flex; justify-content: space-between; align-items: center; padding: 1px 0;
+        }
+        .logo {
+            display: inline-flex; align-items: center; gap: 1px;
+            font-size: clamp(2.5rem, 6.2vw, 0.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: 3px; text-decoration: none;
+        }
+        .logo .logo-img { width: 100px; height: 100px; flex-shrink: 10; display: inline-block; }
+
+        .nav-menu { display: flex; list-style: none; gap: 36px; }
+        .nav-menu a {
+            color: var(--text-light); text-decoration: none; font-weight: 500; transition: all .3s ease; position: relative; padding: 6px 0;
+        }
+        .nav-menu a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); transition: width .3s ease; border-radius: 2px;
+        }
+        .nav-menu a:hover::after { width: 100%; }
+
+        /* Theme toggle button */
+        .theme-toggle {
+            margin-left: 14px;
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--glass-border);
+            background: var(--glass-bg); color: var(--text-light); cursor: pointer;
+            box-shadow: 0 4px 14px var(--shadow);
+        }
+        .theme-toggle .sun { display: none; }
+        html[data-theme="dark"] .theme-toggle .moon { display: none; }
+        html[data-theme="dark"] .theme-toggle .sun { display: inline-block; }
+
+        .hamburger {
+            display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: 0; padding: 8px;
+        }
+        .hamburger span { width: 25px; height: 3px; background: var(--text-light); transition: all .3s ease; border-radius: 3px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 120px 0 80px; position: relative;
+        }
+        .hero-content h1 {
+            font-size: clamp(1.4rem, 6vw, 4.8rem); font-weight: 900; margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.5s ease;
+        }
+        /* Brand heading with PNG logo */
+        .brand-heading { display: inline-flex; align-items: center; gap: 15px; }
+        .brand-heading .logo-img { width: clamp(200px, 6vw, 94px); height: auto; }
+
+        .hero-content .subtitle { font-size: clamp(1.1rem, 2.5vw, 1.5rem); margin-bottom: 22px; color: var(--ink-soft); animation: fadeInUp 1.2s ease; }
+        .hero-content p { font-size: 1.1rem; max-width: 760px; margin: 0 auto 36px; line-height: 1.8; color: var(--body-color); animation: fadeInUp 1.4s ease; }
+
+        .btn {
+            display: inline-block; padding: 15px 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-color); text-decoration: none; border-radius: 50px;
+            font-weight: 700; transition: all .3s ease; border: none; cursor: pointer; font-size: 1.05rem;
+            animation: fadeInUp 1.6s ease;
+            box-shadow: 0 10px 25px rgba(212,175,55,0.25);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35); }
+
+        @keyframes fadeInUp { from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)} }
+
+        /* Sections */
+        section { padding: 100px 0; position: relative; content-visibility: auto; contain-intrinsic-size: 700px; scroll-margin-top: 90px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); font-weight: 800; margin-bottom: 15px; position: relative; display: inline-block; color: var(--heading-color); }
+        .section-title h2::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); border-radius: 2px;
+        }
+        .section-title p { font-size: 1.05rem; opacity: 0.85; max-width: 650px; margin: 20px auto 0; color: var(--muted-color); }
+
+        /* Carousel */
+        .carousel-section { background: transparent; }
+        .carousel-wrapper { position: relative; max-width: 1320px; margin: 0 auto; }
+        .carousel-container {
+            position: relative; overflow: hidden; border-radius: 26px;
+            box-shadow: 0 25px 70px rgba(17, 17, 26, 0.18), inset 0 1px 0 rgba(255,255,255,0.6);
+            border: 0.1px solid rgba(212,175,55,0.25);
+            touch-action: pan-y;
+            background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65));
+        }
+        .carousel-track { display: flex; transition: transform .7s cubic-bezier(0.68,-0.55,0.265,1.55); will-change: transform; }
+        .carousel-slide { min-width: 100%; position: relative; overflow: hidden; }
+        .carousel-slide img { width: 100%; height: 720px; object-fit: cover; display: block; loading: lazy; decoding: async; }
+        .carousel-caption {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 48px;
+            background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+            transform: translateY(100%); transition: transform .5s ease;
+            color: #fff;
+        }
+        .carousel-slide.active .carousel-caption { transform: translateY(0); }
+        .carousel-caption h3 { font-size: 2.2rem; margin-bottom: 10px; color: var(--primary-color); text-shadow: 0 3px 20px rgba(0,0,0,.35); }
+        .carousel-caption p { font-size: 1.05rem; opacity: 0.95; }
+
+        .carousel-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(255,255,255,0.35));
+            backdrop-filter: blur(10px); border: 1px solid rgba(212,175,55,0.35);
+            width: 68px; height: 68px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #222; font-size: 1.6rem; cursor: pointer; transition: all .25s ease; z-index: 10;
+            box-shadow: 0 10px 30px rgba(17,17,26,.18);
+        }
+        .carousel-btn:hover { background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,255,255,0.55)); transform: translateY(-50%) scale(1.07); }
+        .carousel-btn.prev { left: 22px; }
+        .carousel-btn.next { right: 22px; }
+
+        .carousel-indicators { display: flex; justify-content: center; gap: 16px; margin-top: 28px; }
+        .indicator {
+            width: 14px; height: 14px; border-radius: 7px;
+            background: rgba(0,0,0,.18); cursor: pointer; transition: all .25s ease; border: 0;
+        }
+        .indicator.active { background: var(--primary-color); width: 46px; border-radius: 8px; }
+
+        /* Story carousel (About) smaller height */
+        .story-carousel .carousel-slide img { height: 560px; }
+        .story-carousel .carousel-caption { padding: 28px; }
+
+        /* About */
+        .about-section { background: transparent; }
+        .about-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+        .about-text h3 { font-size: 2.2rem; margin-bottom: 18px; color: var(--primary-color); }
+        .about-text p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; color: var(--body-color); }
+
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .stat-box { text-align: center; padding: 30px; border-radius: 15px; background: var(--glass-bg); border: 1px solid var(--glass-border); box-shadow: 0 10px 30px var(--shadow); }
+        .stat-box .number { font-size: 2.6rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px; }
+        .stat-box .label { font-size: 1rem; opacity: 0.9; color: var(--text-light); }
+
+        /* Upcoming Shows */
+        .shows-section { background: transparent; }
+        .shows-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;
+            margin-top: 10px;
+        }
+        .show-card {
+            padding: 22px; border-radius: 16px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px var(--shadow);
+            display: grid; gap: 10px;
+        }
+        .show-date {
+            font-weight: 800; color: var(--heading-color); font-size: 1.05rem;
+        }
+        .show-city {
+            color: var(--muted-color); font-size: 0.98rem;
+        }
+        .show-cta {
+            margin-top: 8px; display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-light); text-decoration: none; font-weight: 600;
+        }
+        .show-cta i { color: var(--primary-color); }
+
+        /* Contact */
+        .contact-wrapper { display: -webkit-flex; align-items: center; justify-content: center; color: var(--text-light); grid-template-columns: 1fr ; }
+        .contact-info { padding: 40px; border-radius: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); }
+        .contact-info h3 { font-size: 2.2rem; margin-bottom: 24px; color: var(--primary-color); }
+        .contact-item { display: flex; align-items: flex-start; margin-bottom: 24px; gap: 18px; }
+        .contact-icon {
+            width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; color: var(--dark-color); flex-shrink: 0;
+            box-shadow: 0 10px 20px rgba(212,175,55,0.25);
+        }
+        .contact-details h4 { font-size: 1.1rem; margin-bottom: 6px; color: var(--heading-color); }
+        .contact-details p, .contact-details a { opacity: 0.9; font-size: 1.05rem; color: var(--body-color); text-decoration: none; }
+
+        /* Contact brand mark */
+        .contact-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+        .contact-brand .logo-img { width: 100px; height: 100px; }
+        .brand-text {
+            font-family: 'Playfair Display', serif; font-weight: 800; letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            font-size: 1.3rem;
+        }
+
+        .social-links { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+        .social-link {
+            width: 90px; height: 48px; background: var(--glass-bg); backdrop-filter: blur(5px);
+            border: 1px solid var(--glass-border); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; color: var(--text-light);
+            font-size: 1.2rem; transition: all .25s ease; text-decoration: none;
+        }
+        .social-link:hover { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--dark-color); transform: translateY(-4px); }
+
+        /* Footer */
+        footer { background: rgba(255,255,255,0.7); padding: 60px 0 30px; text-align: center; border-top: 1px solid rgba(17,17,26,.08); }
+        html[data-theme="dark"] footer { background: rgba(10,10,14,0.6); border-top-color: rgba(255,255,255,.08); }
+        .footer-logo {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px;
+        }
+        .footer-logo .logo-img { width: 100px; height: 90px; }
+        .footer-links { display: flex; justify-content: center; gap: 32px; margin: 22px 0; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-light); text-decoration: none; transition: all .25s ease; }
+        .footer-links a:hover { color: var(--primary-color); }
+        .copyright { opacity: .8; font-size: .95rem; color: var(--muted-color); }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--dark-color); font-size: 1.3rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all .25s ease; z-index: 999; border: 0;
+            box-shadow: 0 10px 25px rgba(232,73,29,0.25);
+        }
+        .scroll-top.active { opacity: 1; visibility: visible; }
+        .scroll-top:hover { transform: translateY(-5px); }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .carousel-slide img { height: 600px; }
+        }
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed; left: -100%; top: 70px; right: 0; flex-direction: column;
+                background: var(--menu-bg); backdrop-filter: blur(20px); width: 100%; text-align: center;
+                transition: left .3s ease; box-shadow: 0 10px 27px rgba(17,17,26,.2); padding: 40px 0;
+            }
+            .nav-menu a { color: var(--menu-link); }
+            .nav-menu.active { left: 0; }
+            .hamburger { display: flex; }
+            .hero-content h1 { font-size: 3rem; }
+            .about-content, .contact-wrapper { grid-template-columns: 1fr; }
+            .carousel-slide img { height: 420px; }
+            .stats { grid-template-columns: 1fr; }
+            .section-title h2 { font-size: 2.2rem; }
+        }
+        @media (max-width: 576px) {
+            .hero-content h1 { font-size: 2.4rem; }
+            .hero-content .subtitle { font-size: 1.15rem; }
+            .carousel-slide img { height: 320px; }
+            .carousel-btn { width: 48px; height: 48px; font-size: 1.1rem; }
+            .contact-info { padding: 28px 20px; }
+            .footer-links { flex-direction: column; gap: 16px; }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+            body::before { animation: none !important; opacity: .5; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PerformingGroup",
+      "name": "ZIM Acrobats",
+      "description": "Zimbabwe's premier acrobatic performers delivering high-energy, culturally rich shows worldwide.",
+      "url": "https://example.com/",
+      "email": "mailto:zimbabweacrobats@gmail.com",
+      "telephone": "+263771234567",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Harare",
+        "addressCountry": "ZW"
+      },
+      "sameAs": [
+        "https://www.facebook.com/",
+        "https://www.instagram.com/",
+        "https://www.youtube.com/",
+        "https://www.linkedin.com/"
+      ]
+    }
+    </script>
+
+    <!-- Apply saved theme ASAP (prevent flash) -->
+    <script>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
 </head>
-<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+<body>
+    <a href="#home" class="skip-link">Skip to content</a>
 
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav role="navigation" aria-label="Main">
+                <a href="#home" class="logo">
+                    <!-- Replace PNG paths with your actual logo files -->
+                    <img
+                        class="logo-img"
+                        alt="ZIM Acrobats logo"
+                        src="/home/just/Documents/zimacrobats/images/zim-logo-256.png"
+                        srcset="/home/just/Documents/zimacrobats/images/zim-logo-256.png 1x, /home/just/Documents/zimacrobats/images/zim-logo-256.png 2x"
+                        width="36" height="36"
+                        decoding="async" fetchpriority="high" />
+                    ZIM ACROBATS
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#shows">Upcoming Shows</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-<!-- =========================
-     PRE LOADER       
-============================== -->
-<!-- <div  class="preloader">
+                <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" title="Toggle theme">
+                    <i class="fa-solid fa-moon moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun sun" aria-hidden="true"></i>
+                </button>
 
-	<div class="sk-spinner sk-spinner-pulse"></div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-</div> -->
-
-
-<!-- =========================
-    NAVIGATION SECTION   
-============================== -->
-<div class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
-	<div class="container">
-
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a href="#" class="navbar-brand">Zim_Acrobats</a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right main-navigation">
-				<li><a href="#home" class="smoothScroll">Home</a></li>
-				<li><a href="#overview" class="smoothScroll">About</a></li>
-				<li><a href="#trainer" class="smoothScroll">Members</a></li>
-				<li><a href="#blog" class="smoothScroll">Blog</a></li>
-				<li><a href="#price" class="smoothScroll">Services</a></li>
-				<li><a href="#testimonial" class="smoothScroll">Testimonials</a></li>
-			</ul>
-		</div>
-
-	</div>
-</div>
-
-
-<!-- =========================
-    HOME SECTION   
-============================== -->
-<section id="home" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-		
-			<!-- <section id="home" class="parallax-section" style="background: rgba(0, 0, 0, 0) none repeat scroll 50% -391px; position: relative; z-index: 0;">
-				<div class="container">
-					<div class="row">
-			
-						<div class="col-md-offset-1 col-md-10 col-sm-12">
-							<h3 class="wow bounceIn animated" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: bounceIn;">Hello! you are welcome to</h3>
-							<h1 class="wow fadeInUp animated" data-wow-delay="1.6s" style="visibility: visible; animation-delay: 1.6s; animation-name: fadeInUp;">Professional<br>Fitness Club</h1>
-							<a href="#overview" class="wow fadeInUp smoothScroll btn btn-default animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 2s; animation-name: fadeInUp;">LEARN MORE</a>
-
-						
-						</div>
-							<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 216px; width: 1440px; z-index: -999998; position: absolute;"><img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1440px; height: 960px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -372px;" src="/home/gallant/Desktop/our page/images/trainer-img3.JPG" class="deleteable">
-								<img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1440px; height: 960px; max-height: 60px; max-width: none; z-index: -999999; opacity: 0.993679; right: 0px; left: 0px; top: -372px;" src="/home/gallant/Desktop/our page/images/overview-img1.JPG">
-							</div>
-					</div>
-				</div>
-			
-		</section> -->
-
-
-			<div class="col-md-offset-1 col-md-10 col-sm-12">
-				<h3 class="wow bounceIn" data-wow-delay="0.5s">Professional</h3>
-				<h1 class="wow fadeInUp" data-wow-delay="1.6s">Zimbabwean<br>Acrobats</h1>
-				<a href="#overview" class="wow fadeInUp smoothScroll btn btn-default" data-wow-delay="2s">LEARN MORE</a>
-			</div>
-
-			<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 216px; width: 1440px; z-index: -999998; position: absolute;"><img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1440px; height: 960px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -372px;" src="/home/gallant/Desktop/our page/images/overview-img.JPG" class="deleteable"><img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1440px; height: 960px; max-height: none; max-width: none; z-index: -999999; opacity: 0; left: 0px; top: -372px;" src="/home/gallant/Desktop/our page/images/overview-img.JPG"></div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    OVERVIEW SECTION   
-============================== -->
-<section id="overview" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="col-md-6 col-sm-12">
-				<img src="images/overview-img.JPG" class="img-responsive" alt="Overview">
-				<blockquote class="wow fadeInUp" data-wow-delay="1.0s">A group of highly skilled profeesional individuals. Providing an amazing show fused with dance, comedy, acrobatic stunts and acrobatic movements. </blockquote>
-			</div>
-
-			<div class="col-md-1"></div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
-				<div class="overview-detail">
-					<h2>About Us</h2>
-					<p>We are African acrobats from Zimbabwe. We perfom in Circuses, Hotels, Carnivals, Festivals and all sorts of different kind of events </p>
-					<p>We believe in descipline and good showmanship </p>
-					<a href="#trainer" class="btn btn-default smoothScroll">More About Us</a>
-					<a href="https://youtu.be/9DisODOHJ8c" class="btn btn-default smoothScroll">Watch Promo Videos</a>
-				</div>
-			</div>
-
-			<div class="col-md-1"></div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    TRAINER SECTION   
-============================== -->
-<section id="trainer" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="1.3s">
-				<h2>our Members</h2>
-				<p>Group members, their abilities and social media platforms.</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
-				<div class="trainer-thumb">
-					<img src="/images/trainer-img1.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>Gallant Hodzi</h2>
-								<h3>Body Trainer</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Isheanesu Gallant Hodzi <b> Personal Skills:</b> hand balancing, tumbling, cyr-wheel, fire breathing</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
-				<div class="trainer-thumb">
-					<img src="/images/trainer-img1.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>Chief Ndini</h2>
-								<h3>Body Trainer</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Tendai Makon<b> Personal Skills:</b> hand balancing, tumbling</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
-				<div class="trainer-thumb">
-					<img src="/images/trainer-img1.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>ControThom</h2>
-								<h3>Body Trainer</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Tatenda Thom<b> Personal Skills:</b> hand balancing, tumbling, cyr-wheel, fire breathing</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
-				<div class="trainer-thumb">
-					<img src="/images/trainer-img1.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>Master P</h2>
-								<h3>Body Trainer</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Proud Panashe<b> Personal Skills:</b> hand balancing, tumbling, cyr-wheel, fire breathing</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
-				<div class="trainer-thumb">
-					<img src="/images/trainer-img1.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>shingie Mollen</h2>
-								<h3>Body Trainer</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Shingie Mollen<b> Personal Skills:</b> hand balancing, tumbling, cyr-wheel, fire breathing</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="2s">
-				<div class="trainer-thumb">
-					<img src="images/trainer-img2.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>Mr President</h2>
-								<h3>Fitness Trainer</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Anesu Sande<b> Personal Skills:</b> hand balancing, tumbling, cyr-wheel, fire breathing</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="2.3s">
-				<div class="trainer-thumb">
-					<img src="/images/trainer-img2.JPG" class="img-responsive" alt="Trainer">
-						<div class="trainer-overlay">
-							<div class="trainer-des">
-								<h2>Takunda Tahwe</h2>
-								<h3>Acrobatic Teacher</h3>
-								<ul class="social-icon">
-									<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-									<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-									<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-								</ul>
-							</div>
-						</div>
-				</div>
-				<p>Takunda Tahwe<b> Personal Skills:</b> hand balancing, tumbling, cyr-wheel, fire breathing</p>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    NEWSLETTER SECTION   
-============================== -->
-<section id="newsletter" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.5s">
-				<h2>Signup Newsletter</h2>
-				<p><b>Work with us || book a show. </b></p>
-				<div class="newsletter_detail">
-					<form action="#" method="post" id="newsletter-signup">
-						<div class="col-md-6 col-sm-6">
-							<input name="name" type="text" class="form-control" id="name" placeholder="Name">
-					  	</div>
-						<div class="col-md-6 col-sm-6">
-							<input name="email" type="email" class="form-control" id="email" placeholder="Email">
-					  	</div>
-						<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-							<input name="submit" type="submit" class="form-control" id="submit" value="SEND MESSAGE">
-						</div>
-				  	</form>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    BLOG SECTION   
-============================== -->
-<section id="blog" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="col-md-12 col-sm-12 text-center">
-				<h2>Acrobatic Blog</h2>
-				<p>We answer any kind of questions you have pertaining sports and entertainment.</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.9s">
-				<div class="blog-thumb">
-					<span class="blog-date">Body Fitness / July 2, 2023</span>
-					<h3 class="blog-title"><a href="#">How to get a fitness model body?</a></h3>
-					<h5 id="blog-author">by Gallant Hodzi</h5>
-				</div>
-			</div>
-
-			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.3s">
-				<div class="blog-thumb">
-					<span class="blog-date">Healthy Fit / June 8, 2023</span>
-					<h3 class="blog-title"><a href="#">Personal Fitness Tips</a></h3>
-					<h5 id="blog-author">by Gallant Hodzi</h5>
-				</div>
-			</div>
-
-			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.6s">
-				<div class="blog-thumb">
-					<span class="blog-date">Workout Services / May 9, 2023</span>
-					<h3 class="blog-title"><a href="#">Efficient Workout Plans</a></h3>
-					<h5 id="blog-author">by Master P</h5>
-				</div>
-			</div>
-
-			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.9s">
-				<div class="blog-thumb">
-					<span class="blog-date">Practice acrobatics / April 18, 2023</span>
-					<h3 class="blog-title"><a href="#">How to practice Acrobatics?</a></h3>
-					<h5 id="blog-author">by Takunda Tahwe</h5>
-				</div>
-			</div>
-			
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    PRICE SECTION   
-============================== -->
-<section id="price" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.9s">
-				<h2>Our Services</h2>
-				<p>Its more than just acrobatics. See Why</p>
-			</div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1s">
-				<div class="pricing__item">
-                    <h3 class="pricing__title">Donate</h3>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>10</div>
-                    <ul class="pricing__feature-list">
-                        <li class="pricing__feature">To poor children</li>
-                        <li class="pricing__feature">To poor families</li>
-                        <li class="pricing__feature">Help African communities</li>
-                        <li class="pricing__feature">join through Fund Fare from Finland</li>
-                        <li class="pricing__feature">Funding Zimbabwean Children</li>
-                    </ul>
-                    <button class="pricing__action">Dzikwa Trust Fund</button>
+    <!-- Hero -->
+    <main id="home" class="hero" role="main">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="brand-heading">
+                    <img
+                        class="logo-img"
+                        alt="ZIM Acrobats logo"
+                        src="/home/just/Documents/zimacrobats/images/zim-logo-256.png"
+                        srcset="/home/just/Documents/zimacrobats/images/zim-logo-256.png 2x, /home/just/Documents/zimacrobats/images/zim-logo-256.png 3x"
+                        width="64" height="64"
+                        decoding="async" />
+                    <span>ZIM ACROBATS</span>
+                </h1>
+                <p class="subtitle">Zimbabwe's Premier Acrobatic Show Group</p>
+                <p>Experience the breathtaking artistry, strength, and cultural richness of authentic African acrobatics. We bring energy, passion, and unforgettable performances to stages worldwide.</p>
+                <div>
+                    <a href="#gallery" class="btn" style="margin-right:10px;">Explore Our Performances</a>
+                    <a href="#contact" class="btn" aria-label="Book ZIM Acrobats for your event">Book Us</a>
                 </div>
-			</div>
+            </div>
+        </div>
+    </main>
 
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.3s">
-				<div class="pricing__item">
-                    <h3 class="pricing__title">Private Tersonal Trainers</h3>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>12.99</div>                  
-                    <ul class="pricing__feature-list">
-                        <li class="pricing__feature">Request a Personal Trainers</li>
-                        <li class="pricing__feature">Get advise on how to stay heathy</li>
-                        <li class="pricing__feature">All ages</li>
-                        <li class="pricing__feature">Begginer friendly</li>
-                        <li class="pricing__feature">+ An Option to join the Group</li>
-                    </ul>
-                    <button class="pricing__action">Request a Trainer</button>
-                </div>
-			</div>
+    <!-- Gallery/Carousel -->
+    <section class="carousel-section" id="gallery" aria-label="Performance Gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Performance Gallery</h2>
+                <p>Witness the power, grace, and precision of our world-class acrobats</p>
+            </div>
 
-			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.6s">
-				<div class="pricing__item">
-                    <h3 class="pricing__title">Morning Online Training</h3>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>Free</div> 
-                    <ul class="pricing__feature-list">
-                        <li class="pricing__feature">Three general Trainers</li>
-                        <li class="pricing__feature">Every morning</li>
-                        <li class="pricing__feature">From the comfort of your home</li>
-                        <li class="pricing__feature">Begenner friendly exercises</li>
-                        <li class="pricing__feature">Lets stay healthy</li>
-                    </ul>
-                   <button class="pricing__action">Attend</button>
-                </div>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    TESTIMONIAL SECTION   
-============================== -->
-<section id="testimonial" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<!-- Testimonial Owl Carousel section
-			================================================== -->
-			<div id="owl-testimonial" class="owl-carousel">
-
-				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
-					<i class="fa fa-quote-left"></i>
-					<h3> I love your energy guys.</h3>
-					<h4>Wales ( Audians)</h4>
-				</div>
-
-				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
-					<i class="fa fa-quote-left"></i>
-					<h3>The show was superb.</h3>
-					<h4>Germany ( Audians)</h4>
-				</div>
-
-				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
-					<i class="fa fa-quote-left"></i>
-					<h3>Zimbabwe team has the best show</h3>
-					<h4> Turkey ( Animation Team )</h4>
-				</div>
-
-				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
-					<i class="fa fa-quote-left"></i>
-					<h3>Enjoyed your show today at Pine Bay. Your show is none other</h3>
-					<h4>Mary Cooper ( Audians )</h4>
-				</div>
-				
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    FOOTER SECTION   
-============================== -->
-<footer>
-	<div class="container">
-		<div class="row">
-
-			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
-				<h2>About Shows</h2>
-				<p><b> We provide a Customisable show with different acts to mension a few, Human pyramids, Funny chair, Hoops diving, Fire breathing, Table act, Rope skipping, Chines pole, Aerial (Solo & Duo), Cyr-wheel and Tumbling.</b></p>
-			</div>
-
-			<div class="wow fadeInUp col-md-5 col-sm-4"  data-wow-delay="0.9s">
-				<h2>Status</h2>
-					<div>
-						<h5>Working at</h5>
-						<h4><b>DIAMOND ENTERTAINMENT </br> & EVENTS COMPANY</b></h4>
-					</div>
-					<div>
-						<h5>Morning Practices</h5>
-						<h4>6:00 AM - 11:00 PM</h4>
-					</div>
-					<div>
-						<h5>Evening Shows</h5>
-						<h4>21:30 PM - 22:00 PM</h4>
-					</div>
-			</div>
-
-			<div class="wow fadeInUp col-md-3 col-sm-4" data-wow-delay="1s">
-				<h2>Follow us</h2>
-				<ul class="social-icon">
-					<li><a href="https://www.facebook.com/mollenshingie?mibextid=ZbWKwL" class="fa fa-faceboo wow fadeIn" data-wow-delay="1s">FB</a></li>
-					<li><a href="https://twitter.com/zimbabweacro?t=WEKTsp6irRLtIwfoTSlrYA&s=09" class="fa fa-twitte wow fadeInUp" data-wow-delay="1.3s">Twitt</a></li>
-					<li><a href="#" class="fa fa-email wow fadeIn" data-wow-delay="1.6s">Email</a></li>
-					<li><a href="https://instagram.com/zim_acrobats?igshid=ZDdkNTZiNTM=" class="fa fa-IG wow fadeInUp" data-wow-delay="1.9s">IG</a></li>
-					<li><a href="#" class="fa fa- wow fadeIn" data-wow-delay="2s">Tiktok</a></li>
-					<li><a href="https://wa.me/905370440892" class="fa fa-google-pl wow fadeIn" data-wow-delay="2s">App</a></li>
-				</ul>
-			</div>
-
-			<div class="clearfix"></div>
-
-			<div class="col-md-12 col-sm-12">
-				<p class="copyright-text">Email: <b> zimbabweAcrobats@gmail.com</b> </p>
-				<p class="copyright-text">Copyright &copy; 2023 Zimbabwe Acrobats <br> @gallant_hodzi</p>
+            <div class="carousel-wrapper" data-carousel>
+                <div class="carousel-container" role="region" aria-roledescription="carousel" aria-label="ZIM Acrobats highlights">
+                    <div class="carousel-track">
+                        <!-- Replace local image paths with hosted URLs or /images/your-file.jpg -->
+                        <div class="carousel-slide active" role="group" aria-roledescription="slide" aria-label="1 of 5">
+                            <img src="/home/just/Documents/zimacrobats/images/10.jpg" alt="Acrobats performing aerial stunt" />
+                            <div class="carousel-caption">
+                                <h3>Gravity-Defying Stunts</h3>
+                                <p>Our performers push the boundaries of human capability with breathtaking aerial displays.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+                            <img src="/home/just/Documents/zimacrobats/images/3.jpg" alt="Team executing a complex synchronized routine" />
+                            <div class="carousel-caption">
+                                <h3>Synchronized Excellence</h3>
+                                <p>Perfect coordination and teamwork create mesmerizing visual spectacles.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+                            <img src="/home/just/Documents/zimacrobats/images/2.jpg" alt="Cultural performance with traditional attire" />
+                            <div class="carousel-caption">
+                                <h3>Cultural Heritage</h3>
+                                <p>Blending traditional Zimbabwean culture with contemporary acrobatic artistry.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+                            <img src="/home/just/Documents/zimacrobats/images/1.JPG" alt="Dynamic movement mid-flight" />
+                            <div class="carousel-caption">
+                                <h3>Dynamic Energy</h3>
+                                <p>High-energy performances that captivate audiences of all ages.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+                            <img src="/home/just/Documents/zimacrobats/images/8.jpg" alt="Strength and balance pose" />
+                            <div class="carousel-caption">
+                                <h3>Strength & Balance</h3>
+                                <p>Demonstrating incredible physical prowess and artistic expression.</p>
+                            </div>
+                        </div>
                     </div>
-			
-		</div>
-	</div>
-</footer>
 
-<!-- =========================
-     SCRIPTS   
-============================== -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.parallax.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/jquery.backstretch.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/custom.js"></script>
+                    <button type="button" class="carousel-btn prev" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="carousel-btn next" aria-label="Next slide">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
 
+                <div class="carousel-indicators" aria-label="Choose slide"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Shows -->
+    <section class="shows-section" id="shows" aria-label="Upcoming Shows">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Shows</h2>
+                <p>Catch ZIM Acrobats live near you — high-energy, family-friendly performances</p>
+            </div>
+
+            <div class="shows-grid">
+                <div class="show-card">
+                    <div class="show-date">Tue, Dec 25, 2025</div>
+                    <div class="show-city">Christmas Circus show for the family @ Reps theatre - Harare, Zimbabwe</div>
+                    <a href="#contact" class="show-cta"><i class="fas fa-ticket-alt"></i> Get $10 Tickets</a>
+                </div>
+                <div class="show-card">
+                    <div class="show-date">Sat, Dec 27, 2025</div>
+                    <div class="show-city">Circus show at Bulawayo theatre - Bulawayo, Zimbabwe</div>
+                    <a href="#contact" class="show-cta"><i class="fas fa-ticket-alt"></i>Get $10 Tickets</a>
+                </div>     <!-- Upcoming Shows 
+
+                <div class="show-card">
+                    <div class="show-date">Thu, Jan 22, 2026</div>
+                    <div class="show-city">The Peacock — Dublin, Ireland</div>
+                    <a href="#" class="show-cta"><i class="fas fa-ticket-alt"></i> Get Tickets</a>
+                </div>
+                <div class="show-card">
+                    <div class="show-date">Sat, Feb 14, 2026</div>
+                    <div class="show-city">Harare International Festival of the Arts — Harare, Zimbabwe</div>
+                    <a href="#" class="show-cta"><i class="fas fa-ticket-alt"></i> Get Tickets</a>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About ZIM Acrobats</h2>
+                <p>A legacy of excellence in African performance arts</p>
+            </div>
+
+            <div class="about-content">
+                <!-- Our Story becomes a carousel of images -->
+                <div class="carousel-wrapper story-wrapper" data-carousel>
+                    <div class="carousel-container story-carousel" role="region" aria-roledescription="carousel" aria-label="Our Story visuals">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+                                <img src="/home/just/Documents/zimacrobats/5.jpg" alt="ZIM Acrobats team performing outdoors" />
+                                <div class="carousel-caption">
+                                    <h3>Our Story</h3>
+                                    <p>From Zimbabwe to the world — culture, rhythm, precision, and heart.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+                                <img src="/home/just/Documents/zimacrobats/images/11.jpg" alt="Training session showcasing balance and strength" />
+                                <div class="carousel-caption">
+                                    <h3>Discipline & Craft</h3>
+                                    <p>Years of training and teamwork behind every flawless moment.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+                                <img src="/home/just/Documents/zimacrobats/images/5.jpg" alt="Cultural dance and drums in performance" />
+                                <div class="carousel-caption">
+                                    <h3>Rooted in Culture</h3>
+                                    <p>Honoring Zimbabwean heritage with every beat and movement.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+                                <img src="/home/just/Documents/zimacrobats/images/4.jpg" alt="Standing ovation from a global audience" />
+                                <div class="carousel-caption">
+                                    <h3>Global Stages</h3>
+                                    <p>Standing ovations across continents — a shared human experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="carousel-btn prev" aria-label="Previous slide">
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="carousel-btn next" aria-label="Next slide">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-indicators" aria-label="Choose slide"></div>
+                </div>
+
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Founded in the heart of Zimbabwe, ZIM Acrobats has brought the vibrant spirit of African performance to global audiences for over two decades. Our troupe consists of exceptionally talented artists dedicated to mastering the art of acrobatics.</p>
+                    <p>We blend traditional Zimbabwean cultural elements with contemporary acrobatic techniques, creating performances that are both authentic and innovative. Each show tells a story, celebrates our heritage, and showcases the incredible athletic ability of our performers.</p>
+                    <p>From intimate venues to international festivals, we've performed across continents, earning acclaim for our unique style, energy, and professionalism.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="number">10</div>
+                    <div class="label">Talented Performers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">1680+</div>
+                    <div class="label">Shows Performed in 5 Years</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">3</div>
+                    <div class="label">Countries Toured</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact" aria-label="Contact ZIM Acrobats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Book us for your next event or inquire about our performances</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info glass">
+                    <div class="contact-brand" aria-label="ZIM Acrobats">
+                        <img
+                            class="logo-img"
+                            alt="ZIM Acrobats logo"
+                            src="/home/just/Documents/zimacrobats/images/zim-logo-256.png"
+                            srcset="/home/just/Documents/zimacrobats/images/zim-logo-256.png 2x"
+                            width="100" height="100"
+                            decoding="async" />
+                        <span class="brand-text">ZIM ACROBATS</span>
+                    </div>
+
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>Harare, Zimbabwe<br>Available for international contracts</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:zimbabweacrobats@gmail.com">zimbabweacrobats@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/905370440892">+90 537 044 08 92</a><br><a href="https://wa.me/263784739021">+263 784 739 021</a></p>
+                        </div>
+                    </div>
+
+                    <div class="social-links" aria-label="Social media">
+                        <a href="https://www.facebook.com/mollenshingie/" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/zim_acrobats_official/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Optional: you can add a booking/contact form here later -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img
+                    class="logo-img"
+                    alt="ZIM Acrobats logo"
+                    src="/home/just/Documents/zimacrobats/images/zim-logo-256.png"
+                    srcset="/home/just/Documents/zimacrobats/images/zim-logo-256.png 2x"
+                    width="100" height="100"
+                    decoding="async" />
+                ZIM ACROBATS
+            </div>
+            <div class="footer-links" role="navigation" aria-label="Footer">
+                <a href="#home">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#shows">Upcoming Shows</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2025 ZIM Acrobats. All rights reserved. Proudly representing Zimbabwe's finest acrobatic talent.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Mobile Navigation Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.focus();
+            });
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+        function setTheme(next) {
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            const isDark = next === 'dark';
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+        themeToggle.addEventListener('click', () => {
+            const current = root.getAttribute('data-theme') || 'light';
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+        // Initialize aria state
+        setTheme(root.getAttribute('data-theme') || 'light');
+
+        // Generic Carousel Initializer (supports multiple carousels)
+        function initCarousel(wrapperEl) {
+            const container = wrapperEl.querySelector('.carousel-container');
+            const track = container.querySelector('.carousel-track');
+            const slides = Array.from(container.querySelectorAll('.carousel-slide'));
+            const prevBtn = container.querySelector('.carousel-btn.prev');
+            const nextBtn = container.querySelector('.carousel-btn.next');
+            const indicatorsContainer = wrapperEl.querySelector('.carousel-indicators');
+
+            if (!track || slides.length === 0) return;
+
+            let currentSlide = slides.findIndex(s => s.classList.contains('active'));
+            if (currentSlide < 0) currentSlide = 0;
+            const totalSlides = slides.length;
+
+            // Create indicators as buttons
+            indicatorsContainer.innerHTML = '';
+            slides.forEach((_, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'indicator' + (index === currentSlide ? ' active' : '');
+                btn.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+                btn.addEventListener('click', () => goToSlide(index, true));
+                indicatorsContainer.appendChild(btn);
+            });
+            const indicators = Array.from(indicatorsContainer.querySelectorAll('.indicator'));
+
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                slides.forEach((slide, index) => {
+                    const isActive = index === currentSlide;
+                    slide.classList.toggle('active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                });
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function nextSlide(userInitiated = false) {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+                if (userInitiated) pauseAuto();
+            }
+            function prevSlide(userInitiated = false) {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+                if (userInitiated) pauseAuto();
+            }
+            function goToSlide(index, userInitiated = false) {
+                currentSlide = index;
+                updateCarousel();
+                if (userInitiated) pauseAuto();
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => prevSlide(true));
+            if (nextBtn) nextBtn.addEventListener('click', () => nextSlide(true));
+
+            // Keyboard navigation for focused container
+            container.setAttribute('tabindex', '0');
+            container.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide(true);
+                if (e.key === 'ArrowRight') nextSlide(true);
+            });
+
+            // Swipe support
+            let startX = 0, isSwiping = false;
+            container.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; isSwiping = true; }, { passive: true });
+            container.addEventListener('touchmove', (e) => {
+                if (!isSwiping) return;
+                const dx = e.touches[0].clientX - startX;
+                if (Math.abs(dx) > 40) {
+                    isSwiping = false;
+                    dx > 0 ? prevSlide(true) : nextSlide(true);
+                }
+            }, { passive: true });
+            container.addEventListener('touchend', () => { isSwiping = false; });
+
+            // Auto-advance carousel (respects reduced motion)
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let autoTimer = null;
+            function startAuto() {
+                if (prefersReduced) return;
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(() => nextSlide(false), 5000);
+            }
+            function pauseAuto() { if (autoTimer) clearInterval(autoTimer); }
+            container.addEventListener('mouseenter', pauseAuto);
+            container.addEventListener('mouseleave', startAuto);
+            container.addEventListener('focusin', pauseAuto);
+            container.addEventListener('focusout', startAuto);
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) pauseAuto(); else startAuto();
+            });
+
+            updateCarousel();
+            startAuto();
+        }
+
+        // Initialize all carousels on the page
+        document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+
+        // Contact Form Submission guard (if you add the form later)
+        const contactForm = document.getElementById('contactForm');
+        const statusEl = document.getElementById('formStatus');
+        if (contactForm && statusEl) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (contactForm.company && contactForm.company.value) return; // honeypot
+                const formData = new FormData(contactForm);
+                const name = formData.get('name')?.toString().trim();
+                const email = formData.get('email')?.toString().trim();
+                const message = formData.get('message')?.toString().trim();
+                const eventType = formData.get('eventType')?.toString().trim();
+
+                if (!name || !email || !message || !eventType) {
+                    statusEl.textContent = 'Please complete all required fields.';
+                    statusEl.style.color = '#8a6d3b';
+                    return;
+                }
+                statusEl.textContent = 'Sending...';
+                statusEl.style.color = '#333';
+                setTimeout(() => {
+                    statusEl.textContent = `Thank you, ${name}! We'll get back to you at ${email}.`;
+                    statusEl.style.color = '#1a7f37';
+                    contactForm.reset();
+                }, 800);
+            });
+        }
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('active', window.scrollY > 500);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+        });
+
+        // Intersection observer for subtle reveal
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass, .about-text, .stat-box, .show-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
+```
